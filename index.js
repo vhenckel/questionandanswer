@@ -12,6 +12,10 @@ app.get("/ask", (req, res) => {
   res.render("ask")
 })
 
+app.post("/saveask", (req, res) => {
+  res.send("Ask saved...")
+})
+
 app.listen(8080, () => {
   console.log("App running...")
 })
