@@ -53,10 +53,13 @@ Este projeto foi desenvolvido com as seguintes tecnologias:
 ## :gear: Iniciando servidor
 ```bash
   # Entrar no diretório do servidor:
-  $ cd server
+  $ cd questionandanswer
 
   # Iniciar a aplicação:
   $ npm run sd
+
+  # Acessar a aplicação:
+  $ http://localhost:8080
 ```
 
 # :thought_balloon: Inspiração
