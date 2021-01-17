@@ -1,0 +1,28 @@
+{
+  "name": "questionandanswer",
+  "version": "1.0.0",
+  "description": "Question and Answer Platform with NodeJS",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "sd": "nodemon -q --inspect index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vhenckel/questionandanswer.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vhenckel/questionandanswer/issues"
+  },
+  "homepage": "https://github.com/vhenckel/questionandanswer#readme",
+  "dependencies": {
+    "ejs": "^3.1.5",
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.7"
+  }
+}

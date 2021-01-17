@@ -56,7 +56,7 @@ Este projeto foi desenvolvido com as seguintes tecnologias:
   $ cd server
 
   # Iniciar a aplicação:
-  $ npm start
+  $ npm run sd
 ```
 
 # :thought_balloon: Inspiração
