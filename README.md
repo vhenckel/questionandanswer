@@ -23,7 +23,7 @@ Question and Answer Platform with NodeJS
 ## :page_with_curl: Sobre
 Este repositório contém uma plataforma de perguntas e respostas estilo ASKfm.
 
-O objetivo principal desse projeto foi conhecer e aprender um pouco mais sobre o framework Express com EJS.
+O objetivo principal desse projeto foi conhecer e aprender um pouco mais sobre o framework Express com EJS utilizando o ORM Sequelize.
 
 ## :hammer: Tecnologias
 
@@ -32,6 +32,7 @@ Este projeto foi desenvolvido com as seguintes tecnologias:
 - [Express](https://expressjs.com/pt-br/)
 - [EJS](https://ejs.co/)
 - [MySQL](https://www.mysql.com/)
+- [Sequelize](https://sequelize.org/)
 - [VS Code](https://code.visualstudio.com/) com [EditorConfig](https://editorconfig.org/), [ESLint](https://eslint.org/) e [Prettier](https://prettier.io/)
 
 ## :books: Requisitos
