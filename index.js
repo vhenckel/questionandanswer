@@ -4,6 +4,7 @@ const bodyParser = require("body-parser")
 const connection = require("./database/database")
 
 const AskModel = require("./database/Ask")
+const AnswerModel = require("./database/Answer")
 
 connection
   .authenticate()
@@ -22,11 +23,51 @@ app.use(bodyParser.urlencoded({
 app.use(bodyParser.json())
 
 app.get("/", (req, res) => {
-  res.render("index")
+  AskModel
+    .findAll({
+      raw: true,
+      order: [
+        ['id', 'DESC']
+      ]
+    })
+    .then(asks => {
+      res.render("index", {
+        asks
+      })
+    })
 })
 
 app.get("/ask", (req, res) => {
   res.render("ask")
+})
+
+app.get("/answer/:id", (req, res) => {
+  const {
+    id
+  } = req.params
+  AskModel
+    .findOne({
+      where: {
+        id
+      }
+    })
+    .then(ask => {
+      if (!ask || ask === undefined) res.redirect("/")
+      AnswerModel.findAll({
+        where: {
+          askId: ask.id
+        },
+        order: [
+          ['id', 'DESC']
+        ]
+      }).then(answers => {
+        res.render("answer", {
+          ask,
+          answers
+        })
+      })
+
+    })
 })
 
 app.post("/saveask", (req, res) => {
@@ -40,6 +81,20 @@ app.post("/saveask", (req, res) => {
     description
   }).then(() => {
     res.redirect("/")
+  })
+})
+
+app.post("/saveanswer", (req, res) => {
+  const {
+    body,
+    askId
+  } = req.body
+
+  AnswerModel.create({
+    body,
+    askId
+  }).then(() => {
+    res.redirect(`/answer/${askId}`)
   })
 })
 
